@@ -1,5 +1,5 @@
 import {} from "../actions/constant";
-import { typeactions } from "../actions";
+import { Type } from "../actions";
 
 const iniTalState = {
   movies: [],
@@ -7,22 +7,22 @@ const iniTalState = {
   isFetchedSuccess: false,
   isFetchedfail: false,
 };
-export const moviesReducer = (state = iniTalState, { type, payload }) => {
-  switch (type) {
-    case typeactions.GET_MOVIES: {
+export const moviesReducer = (state = iniTalState, action) => {
+  switch (action.type) {
+    case Type.GET_MOVIES: {
       return {
         ...state,
-        movies: payload,
+        movies: action.payload,
         isFetched: true,
       };
     }
-    case typeactions.GET_MOVIES_SUCCESS: {
+    case Type.GET_MOVIES_SUCCESS: {
       return {
         ...state,
         isFetchedSuccess: true,
       };
     }
-    case typeactions.GET_MOVIES_FAIL: {
+    case Type.GET_MOVIES_FAIL: {
       return {
         ...state,
         isFetchedfail: false,

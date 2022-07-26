@@ -1,22 +1,22 @@
-import { GET_MOVIES, GET_MOVIES_FAIL, GET_MOVIES_SUCCESS } from "./constant";
+import { Type } from "./constant";
 import { apis } from "../../api";
 
 export const getMovies = (payload) => {
   return {
-    type: GET_MOVIES,
+    type: Type.GET_MOVIES,
     payload,
   };
 };
 
 export const getMoviesFail = () => {
   return {
-    type: GET_MOVIES_FAIL,
+    type: Type.GET_MOVIES_FAIL,
   };
 };
 
 export const getMoviesSuccess = () => {
   return {
-    type: GET_MOVIES_SUCCESS,
+    type: Type.GET_MOVIES_SUCCESS,
   };
 };
 
@@ -33,7 +33,6 @@ export const getMoviesThunk = () => {
         const response = await getData(movies[i]);
         allMovies = allMovies.concat(response);
       }
-      console.log(allMovies);
       return allMovies;
     };
     try {

@@ -1,4 +1,4 @@
 import * as actions from "./movieAction";
-import * as typeactions from "./constant";
+import { Type } from "./constant";
 
-export { actions, typeactions };
+export { actions, Type };

@@ -8,8 +8,6 @@ const MoviesPage = () => {
   const { movies } = useSelector((state) => state.moviesReducer);
   const dispatch = useDispatch();
 
-  console.log(movies);
-
   useEffect(() => {
     dispatch(actions.getMoviesThunk());
   }, []);

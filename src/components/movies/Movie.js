@@ -4,9 +4,13 @@ export const Movie = ({ movie }) => {
   return (
     <div className="movie">
       <img src={movie.Poster} />
-      <h2>{movie.Title}</h2>
-      <h3>Type: {movie.Type}</h3>
-      <h3>Year: {movie.Year}</h3>
+      <div className="movie-info">
+        <h2>{movie.Title}</h2>
+        <div className="movie-detail">
+          <h3>Type: {movie.Type}</h3>
+          <h3>Year: {movie.Year}</h3>
+        </div>
+      </div>
     </div>
   );
 };

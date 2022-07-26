@@ -3,45 +3,62 @@
     @content;
   }
 }
-
 .movies-page {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -20px;
+  @include Responsive("480px") {
+    margin-left: 0px;
+  }
   .movie {
-    padding: 1em 1em;
-    h2 {
-      font-size: 1.3rem;
-      margin: 0;
-      @include Responsive("1400px") {
-        font-size: 1rem;
-      }
-      @include Responsive("480px") {
+    position: relative;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin-left: 20px;
+    margin-block: 20px;
+    overflow: hidden;
+    @include Responsive("480px") {
+      margin-left: 0px;
+    }
+    .movie-info {
+      position: relative;
+      width: 100%;
+      height: 30%;
+      h2 {
         font-size: 1.3rem;
+        margin: 0;
+        @include Responsive("1400px") {
+          font-size: 1rem;
+        }
+        @include Responsive("480px") {
+          font-size: 1.3rem;
+        }
+      }
+      .movie-detail {
+        position: absolute;
+        bottom: 10%;
+        h3 {
+          font-size: 1rem;
+          margin: 0;
+          font-weight: 500;
+          @include Responsive("1400px") {
+            font-size: 0.7rem;
+          }
+          @include Responsive("480px") {
+            font-size: 1rem;
+          }
+        }
       }
     }
-    h3 {
-      font-size: 1rem;
-      margin: 0;
-      font-weight: 500;
-      @include Responsive("1400px") {
-        font-size: 0.7rem;
-      }
-      @include Responsive("480px") {
-        font-size: 1rem;
-      }
-    }
-    flex: 0 0 20%;
+    flex: 0 0 calc(20% - 20px);
     @include Responsive("1400px") {
-      flex: 0 0 33.333%;
+      flex: 0 0 calc(33.333% - 20px);
     }
     @include Responsive("480px") {
       flex: 0 0 100%;
     }
     img {
-      border: solid rgb(231, 159, 159) 0.1em;
-      padding: 1em 1em;
       width: 100%;
-      height: 80%;
+      height: 70%;
       max-height: auto;
     }
   }
