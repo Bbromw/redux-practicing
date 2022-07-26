@@ -22,7 +22,7 @@ export const getMoviesSuccess = () => {
 
 export const getMoviesThunk = () => {
   return async (dispatch) => {
-    const movies = ["hello", "friends"];
+    const movies = ["robot", "dinosaur"];
     const getData = async (title) => {
       const { data } = await apis.getMovies(title);
       return data.Search;
