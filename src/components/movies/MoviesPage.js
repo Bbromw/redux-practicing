@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Movie } from "./Movie";
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { actions } from "../../store";
+import { movieAction } from "../../store";
 import "./moviePage.scss";
 
 const MoviesPage = () => {
@@ -9,7 +9,7 @@ const MoviesPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actions.getMoviesThunk());
+    dispatch(movieAction.getMoviesThunk());
   }, []);
   return (
     <section className="movies-page">
