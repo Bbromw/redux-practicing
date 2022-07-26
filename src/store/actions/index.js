@@ -1,3 +1,4 @@
-import * as actions from "./action";
+import * as actions from "./movieAction";
+import { Type } from "./constant";
 
-export { actions };
+export { actions, Type };
