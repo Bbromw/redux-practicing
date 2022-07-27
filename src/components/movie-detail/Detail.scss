@@ -1,0 +1,54 @@
+@mixin Responsive($canvas) {
+  @media (max-width: $canvas) {
+    @content;
+  }
+}
+
+.movie-detail {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  @include Responsive("480px") {
+    width: 100%;
+  }
+  .poster {
+    width: 200px;
+    img {
+      width: 100%;
+      min-height: auto;
+    }
+  }
+  .details {
+    h2 {
+      @include Responsive("480px") {
+        font-size: 1.5rem;
+      }
+      font-size: 2rem;
+      margin: 0;
+    }
+    p {
+      margin-block: 1.5em;
+      font-size: 1rem;
+      @include Responsive("480px") {
+        font-size: 0.8rem;
+      }
+    }
+    .info {
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Inter", sans-serif;
+      @include Responsive("1440px") {
+        flex-direction: column;
+      }
+      span {
+        @include Responsive("1440px") {
+          margin-block: 1em;
+        }
+        @include Responsive("480px") {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

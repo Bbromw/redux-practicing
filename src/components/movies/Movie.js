@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Movie = ({ movie }) => {
   return (
@@ -9,6 +10,9 @@ export const Movie = ({ movie }) => {
         <div className="movie-detail">
           <h3>Type: {movie.Type}</h3>
           <h3>Year: {movie.Year}</h3>
+          <Link to={`/${movie.imdbID}`} className="detail-button">
+            Detail
+          </Link>
         </div>
       </div>
     </div>
