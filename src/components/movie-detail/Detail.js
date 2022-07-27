@@ -6,20 +6,11 @@ import "./Detail.scss";
 
 const Detail = () => {
   const { movie } = useSelector((state) => state.movieDetailReducer);
-  const dispatch = useDispatch();
-  console.log(movie);
-  const { id } = useParams();
 
-  const renderRatings = () => {
-    return movie.Ratings.map((rating, index) => {
-      return (
-        <div key={index} className="source">
-          <h3>Source: {rating.Source}</h3>
-          <h4>Value: {rating.Value}</h4>
-        </div>
-      );
-    });
-  };
+  const [otherMovies, setOtherMovies] = useState();
+
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(movieDetailAction.getMovieDetailThunk(id));
@@ -27,12 +18,20 @@ const Detail = () => {
       dispatch(movieDetailAction.freshMovieDetail());
     };
   }, []);
+
   return (
     <div className="movie-detail">
       <div className="poster">
         <img src={movie.Poster}></img>
       </div>
       <div className="details">
+        <div className="info">
+          <span>Language: {movie.Language}</span>
+          <span>Runtime: {movie.Runtime}</span>
+          <span>Votes: {movie.imdbVotes}</span>
+          <span>Rating: {movie.imdbRating} </span>
+        </div>
+
         <h2>{movie.Title}</h2>
 
         <p>{movie.Plot}</p>
@@ -52,12 +51,6 @@ const Detail = () => {
         <p>
           <strong>BoxOffice: </strong> {movie.BoxOffice}
         </p>
-        <div className="info">
-          <span>Language: {movie.Language}</span>
-          <span>Runtime: {movie.Runtime}</span>
-          <span>Votes: {movie.imdbVotes}</span>
-          <span>Rating: {movie.imdbRating} </span>
-        </div>
       </div>
     </div>
   );

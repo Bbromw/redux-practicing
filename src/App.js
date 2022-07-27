@@ -7,6 +7,8 @@ function App() {
   return (
     <div className="App">
       <nav>
+        <div className="logo">MovieHD.</div>
+        <div className="menu">+</div>
         <ul>
           <li>
             <Link to="/">Movies</Link>

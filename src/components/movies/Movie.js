@@ -7,7 +7,8 @@ export const Movie = ({ movie }) => {
       <img src={movie.Poster} />
       <div className="movie-info">
         <h2>{movie.Title}</h2>
-        <div className="movie-detail">
+
+        <div className="movie-extra">
           <h3>Type: {movie.Type}</h3>
           <h3>Year: {movie.Year}</h3>
           <Link to={`/${movie.imdbID}`} className="detail-button">

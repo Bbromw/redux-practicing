@@ -5,20 +5,48 @@
 }
 
 .movie-detail {
-  width: 50%;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
   position: relative;
   @include Responsive("480px") {
-    width: 100%;
+    flex-direction: column;
   }
   .poster {
-    width: 200px;
+    width: 20%;
+    @include Responsive("1000px") {
+      width: 50%
+    }
+    @include Responsive("480px") {
+      width: 100%;
+    }
     img {
       width: 100%;
-      min-height: auto;
+      max-width: 100%;
+      height: auto;
     }
   }
+  
   .details {
+    @include Responsive("480px") {
+      width: 100%;
+    }
+    padding: 0 1em;
+    width:60%;
+    .info {
+      flex: 1;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      font-family: "Inter", sans-serif;
+      span {
+        @include Responsive("1440px") {
+          margin-block: 1em;
+        }
+        @include Responsive("480px") {
+          font-size: 0.8rem;
+        }
+      }
+    }
     h2 {
       @include Responsive("480px") {
         font-size: 1.5rem;
@@ -33,22 +61,6 @@
         font-size: 0.8rem;
       }
     }
-    .info {
-      font-size: 1rem;
-      display: flex;
-      justify-content: space-between;
-      font-family: "Inter", sans-serif;
-      @include Responsive("1440px") {
-        flex-direction: column;
-      }
-      span {
-        @include Responsive("1440px") {
-          margin-block: 1em;
-        }
-        @include Responsive("480px") {
-          font-size: 0.8rem;
-        }
-      }
-    }
+    
   }
 }
