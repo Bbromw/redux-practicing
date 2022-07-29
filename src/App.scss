@@ -4,50 +4,88 @@
   }
 }
 .App {
-  width: 80%;
+  width: 100%;
   @include Responsive("480px") {
-    width: 60%;
+    width: 100%;
   }
   margin: 0 auto;
-  nav {
+  .nav {
+    button {
+      @include Responsive("480px") {
+        display: none;
+      }
+      height: 40px;
+      width: 150px;
+      border-radius: 20px;
+      color: white;
+      margin: 0 1em;
+    }
+    .sign-in-button {
+      border: solid 1px #eeb500;
+      background-color: #eeb50000;
+      height: 38px;
+    }
+    .premium-button {
+      background-color: #eeb500;
+      border: none;
+    }
     display: flex;
-    margin-bottom: 1em;
-    background-color: #aaa;
-    flex-wrap: wrap;
-    font-size: 1.1rem;
+    padding: 1em 0em;
     align-items: center;
-    justify-content: space-between;
-    .menu {
-      &:hover ~ ul{
-        display: block;
-      }
-      font-size: 2rem;
-      display: none;
-      @include Responsive("840px") {
-        display: block;
-      }
-    }
+    background-color: #131720;
+    color: white;
     .logo {
-      margin-left: 1em;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       font-size: 1.5rem;
-    }
-    ul {
-      @include Responsive("840px") {
-        width: 100%;
-        display: none ;
-        text-align: center;
+      &__extra {
+        font-size: 0.8rem;
       }
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
+    }
+    &__menu {
+      font-size: 1rem;
+      &__icon {
+        padding-left: 1em;
         margin-right: 1em;
-        padding: 0.5em 0px;
-        a {
-          text-decoration: none;
-          color: white;
-          padding: 0;
+        color: white;
+        font-size: 1.5rem;
+      }
+      &__list {
+        .buttons-inside{
+          button{
+            margin-block: 1em;
+            display: none;
+            @include Responsive("480px") {
+              display: block;
+            }
+          }
         }
+        position: fixed;
+        margin: 0;
+        bottom: 0;
+        width: 200px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0.5em;
+        list-style: none;
+        z-index: 1;
+        align-items: center;
+        margin-left: -100%;
+        &__close-icon {
+          align-self: flex-end;
+        }
+        li {
+          margin-block: 0.5em;
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+        background-color: #151f30;
       }
     }
   }

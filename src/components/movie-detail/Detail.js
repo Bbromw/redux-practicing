@@ -7,8 +7,6 @@ import "./Detail.scss";
 const Detail = () => {
   const { movie } = useSelector((state) => state.movieDetailReducer);
 
-  const [otherMovies, setOtherMovies] = useState();
-
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -21,37 +19,51 @@ const Detail = () => {
 
   return (
     <div className="movie-detail">
-      <div className="poster">
-        <img src={movie.Poster}></img>
-      </div>
-      <div className="details">
-        <div className="info">
-          <span>Language: {movie.Language}</span>
-          <span>Runtime: {movie.Runtime}</span>
-          <span>Votes: {movie.imdbVotes}</span>
-          <span>Rating: {movie.imdbRating} </span>
-        </div>
+      {movie.Title !== undefined ? (
+        <>
+          <div className="details">
+            <div
+              className="blur"
+              style={{ backgroundImage: `url(${movie.Poster})` }}
+            ></div>
+            <div className="info">
+              <span>Language: {movie.Language}</span>
+              <span>Runtime: {movie.Runtime}</span>
+              <span>Votes: {movie.imdbVotes}</span>
+              <span>Rating: {movie.imdbRating} </span>
+            </div>
 
-        <h2>{movie.Title}</h2>
+            <h2>{movie.Title}</h2>
 
-        <p>{movie.Plot}</p>
-        <p>
-          <strong>Actor: </strong> {movie.Actors}
-        </p>
-        <p>
-          <strong>Director: </strong>
-          {movie.Director}
-        </p>
-        <p>
-          <strong>Awards: </strong> {movie.Awards}
-        </p>
-        <p>
-          <strong>Country: </strong> {movie.Country}
-        </p>
-        <p>
-          <strong>BoxOffice: </strong> {movie.BoxOffice}
-        </p>
-      </div>
+            <p>{movie.Plot}</p>
+            <p>
+              <strong>Actor: </strong> {movie.Actors}
+            </p>
+            <p>
+              <strong>Director: </strong>
+              {movie.Director}
+            </p>
+            <p>
+              <strong>Awards: </strong> {movie.Awards}
+            </p>
+            <p>
+              <strong>Country: </strong> {movie.Country}
+            </p>
+            <p>
+              <strong>BoxOffice: </strong> {movie.BoxOffice}
+            </p>
+          </div>
+          <div className="watch">
+            <div className="name">{movie.Title}</div>
+            <div className="watch__img">
+              <img src={movie.Poster}></img>
+            </div>
+            <button>Watch</button>
+          </div>
+        </>
+      ) : (
+        "Loading"
+      )}
     </div>
   );
 };
