@@ -1,0 +1,160 @@
+.detail-section {
+  background: url("../../../images/VN-en-20220725-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+    rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .left-side {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    z-index: 1;
+    .heading {
+      display: block;
+      .title {
+        color: white;
+        display: inline-block;
+        font-size: 4rem;
+      }
+      .extra-heading {
+        display: inline-block;
+        .item {
+          display: inline-block;
+          color: white;
+          margin-left: 20px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .movie-info {
+      color: white;
+      display: block;
+      display: grid;
+      display: flex;
+
+      .moviePicture {
+        flex: 2;
+        .picture {
+          width: 100%;
+        }
+      }
+      .info {
+        flex: 1;
+        margin-left: 20px;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        .plot {
+          margin-bottom: 20px;
+        }
+        &-container {
+          position: relative;
+          margin-top: 0;
+          margin-bottom: 35px;
+          .specific-info {
+            display: inline-block;
+            &:hover ~ .info-detail {
+              display: block;
+              animation: moveDown 0.15s ease-in-out;
+            }
+            cursor: pointer;
+          }
+          .info-detail {
+            position: absolute;
+            width: 100%;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    position: relative;
+    padding: 0 10px;
+    z-index: 1;
+    margin-right: 20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    .interact{
+
+        font-size: 2rem;
+        .sections{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-top: 10px;
+            .sub{
+                font-size: 1rem;
+                margin-right: 20px;
+            }
+        }
+        .watch{
+            .icon{
+                color: red;
+            }
+        }
+        .add{
+            margin-top: 20px;
+            .icon{
+                color: #eeb500;
+            }
+        }
+    }
+    .other-movies{
+        width: 2000%;
+        position: relative;
+        margin-bottom: -10px;
+        .heading{
+   
+            margin-bottom: 5px;
+        }
+        .movies{
+            .movie{
+                vertical-align: top;
+                width: 150px;
+                display: inline-block;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .next-button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: rgba(248, 245, 245, 0.5)
+        }
+    }
+
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

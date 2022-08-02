@@ -1,10 +1,10 @@
 import "./App.scss";
 import { MoviesPage } from "./components/movies";
-import Detail from "./components/movie-detail/Detail";
 import { Switch, Route, Link } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { useRef } from "react";
 import DetailsPage from "./components/movie-detail/DetailsPage";
+import NMovieDetail from "./components/movie-detail/N_movie_detail/NMovieDetail";
 
 function App() {
   const menuList = useRef(null);
@@ -57,10 +57,10 @@ function App() {
         <Route exact path="/">
           <MoviesPage />
         </Route>
-        {/* <Route path="/:id">
-          <Detail />
-        </Route> */}
-        <Route path="/:id">
+        <Route path="/boring/:id">
+          <NMovieDetail />
+        </Route>
+        <Route path="/moreboring/:id">
           <DetailsPage />
         </Route>
       </Switch>
