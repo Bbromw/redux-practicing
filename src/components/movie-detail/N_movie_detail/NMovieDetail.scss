@@ -1,6 +1,5 @@
 .detail-section {
-  background: url("../../../images/VN-en-20220725-popsignuptwoweeks-perspective_alpha_website_large.jpg")
-    rgba(0, 0, 0, 0.5);
+  background: url("../../../images/bg_demo.jpg") rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: 4fr 1fr;
   position: relative;
@@ -21,6 +20,7 @@
     z-index: 1;
     .heading {
       display: block;
+      max-width: 500px;
       .title {
         color: white;
         display: inline-block;
@@ -38,8 +38,6 @@
     }
     .movie-info {
       color: white;
-      display: block;
-      display: grid;
       display: flex;
 
       .moviePicture {
@@ -55,11 +53,11 @@
         font-size: 1.2rem;
         .plot {
           margin-bottom: 20px;
+          line-height: 30px;
         }
         &-container {
-          position: relative;
           margin-top: 0;
-          margin-bottom: 35px;
+          margin-bottom: 15px;
           .specific-info {
             display: inline-block;
             &:hover ~ .info-detail {
@@ -69,7 +67,7 @@
             cursor: pointer;
           }
           .info-detail {
-            position: absolute;
+       
             width: 100%;
             display: none;
           }
@@ -80,7 +78,7 @@
   .right-side {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: black;
     color: white;
     position: relative;
@@ -89,64 +87,68 @@
     margin-right: 20px;
     margin-top: -20px;
     margin-bottom: -20px;
-    .interact{
-
-        font-size: 2rem;
-        .sections{
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            margin-top: 10px;
-            .sub{
-                font-size: 1rem;
-                margin-right: 20px;
-            }
+    .interact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      font-size: 2rem;
+      .sections {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-top: 10px;
+        .sub {
+          font-size: 1rem;
+          margin-right: 20px;
         }
-        .watch{
-            .icon{
-                color: red;
-            }
+      }
+      .watch {
+        .icon {
+          color: red;
         }
-        .add{
-            margin-top: 20px;
-            .icon{
-                color: #eeb500;
-            }
+      }
+      .add {
+        margin-top: 20px;
+        .icon {
+          color: #eeb500;
         }
+      }
     }
-    .other-movies{
-        width: 2000%;
-        position: relative;
-        margin-bottom: -10px;
-        .heading{
-   
-            margin-bottom: 5px;
+    .other-movies {
+      flex: 1;
+      width: 2000%;
+      position: relative;
+      margin-bottom: -10px;
+      .heading {
+        margin-bottom: 5px;
+      }
+      .movies {
+        .movie {
+          vertical-align: top;
+          width: 160px;
+          height: 280px;
+          display: inline-block;
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
-        .movies{
-            .movie{
-                vertical-align: top;
-                width: 150px;
-                display: inline-block;
-                img{
-                    width: 100%;
-                }
-            }
-        }
-        .next-button{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 60px;
-            height: 60px;
-            border: none;
-            border-radius: 30px;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            font-weight: 500;
-            background-color: rgba(248, 245, 245, 0.5)
-        }
+      }
+      .next-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 30px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: rgba(248, 245, 245, 0.5);
+      }
     }
-
   }
 }
 

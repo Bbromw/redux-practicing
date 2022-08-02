@@ -64,7 +64,7 @@ function App() {
           <DetailsPage />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
