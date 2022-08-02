@@ -20,19 +20,19 @@
     z-index: 1;
     .heading {
       display: block;
-      max-width: 500px;
+      max-width: 400px;
       .title {
         color: white;
         display: inline-block;
-        font-size: 4rem;
+        font-size: 2.5rem;
       }
       .extra-heading {
         display: inline-block;
         .item {
           display: inline-block;
           color: white;
-          margin-left: 20px;
-          font-size: 1.2rem;
+          margin-right: 20px;
+          font-size: 1rem;
         }
       }
     }
@@ -41,16 +41,18 @@
       display: flex;
 
       .moviePicture {
-        flex: 2;
+        width: 400px;
+        height: 500px;
         .picture {
           width: 100%;
+          height: 100%;
         }
       }
       .info {
         flex: 1;
         margin-left: 20px;
         margin-right: 10px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         .plot {
           margin-bottom: 20px;
           line-height: 30px;
@@ -97,7 +99,7 @@
         display: flex;
         align-items: center;
         justify-content: left;
-        margin-top: 10px;
+        margin-top: 5px;
         .sub {
           font-size: 1rem;
           margin-right: 20px;
@@ -109,7 +111,7 @@
         }
       }
       .add {
-        margin-top: 20px;
+        margin-top: 10px;
         .icon {
           color: #eeb500;
         }
@@ -118,8 +120,8 @@
     .other-movies {
       flex: 1;
       width: 2000%;
+      margin-top: 10px;
       position: relative;
-      margin-bottom: -10px;
       .heading {
         margin-bottom: 5px;
       }
