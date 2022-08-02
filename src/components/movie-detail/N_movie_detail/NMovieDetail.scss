@@ -60,12 +60,13 @@
         &-container {
           margin-top: 0;
           margin-bottom: 15px;
+          &:hover > .info-detail {
+            display: block;
+            animation: moveDown 0.15s ease-in-out;
+          }
           .specific-info {
             display: inline-block;
-            &:hover ~ .info-detail {
-              display: block;
-              animation: moveDown 0.15s ease-in-out;
-            }
+           
             cursor: pointer;
           }
           .info-detail {
