@@ -1,21 +1,91 @@
+@mixin Responsive($canvas) {
+  @media (max-width: $canvas) {
+    @content;
+  }
+}
 .App{
   width: 100%;
   margin: 0 auto;
-  nav{
-    margin-bottom: 1em;
-    background-color: #aaa;
-    font-size: 1rem;
-    ul{
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li{
-        margin-left: 1em;
-        a{
-          text-decoration: none;
-          color: white
-        }
+  .nav {
+    border-bottom: 1px solid black;
+    button {
+      @include Responsive("480px") {
+        display: none;
+      }
+      height: 40px;
+      width: 150px;
+      border-radius: 20px;
+      color: white;
+      margin: 0 1em;
+    }
+    .sign-in-button {
+      border: solid 1px #eeb500;
+      background-color: #eeb50000;
+      height: 38px;
+    }
+    .premium-button {
+      background-color: #eeb500;
+      border: none;
+    }
+    display: flex;
+    padding: 1em 0em;
+    align-items: center;
+    background-color: #131720;
+    color: white;
+    .logo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 1.5rem;
+      &__extra {
+        font-size: 0.8rem;
       }
     }
+    &__menu {
+      font-size: 1rem;
+      &__icon {
+        padding-left: 1em;
+        margin-right: 1em;
+        color: white;
+        font-size: 1.5rem;
+      }
+      &__list {
+        .buttons-inside{
+          button{
+            margin-block: 1em;
+            display: none;
+            @include Responsive("480px") {
+              display: block;
+            }
+          }
+        }
+        position: fixed;
+        margin: 0;
+        bottom: 0;
+        width: 200px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0.5em;
+        list-style: none;
+        z-index: 1;
+        align-items: center;
+        margin-left: -100%;
+        &__close-icon {
+          align-self: flex-end;
+        }
+        li {
+          margin-block: 0.5em;
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+        background-color: #151f30;
+      }
+    }
+    background-color: #151f30;
   }
 }
