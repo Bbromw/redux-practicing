@@ -11,12 +11,19 @@ const MoviesPage = () => {
   useEffect(() => {
     dispatch(movieAction.getMoviesThunk());
   }, []);
+
+  useEffect(() => {}, []);
   return (
     <section className="movies-page">
-      {movies &&
-        movies.map((movie) => {
-          return <Movie key={movie.imdbID} movie={movie} />;
-        })}
+      <h2 className="title">
+        The best movies <a>View more</a>
+      </h2>
+      <div className="movies">
+        {movies &&
+          movies.map((movie) => {
+            return <Movie key={movie.imdbID} movie={movie} />;
+          })}
+      </div>
     </section>
   );
 };

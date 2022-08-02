@@ -4,68 +4,47 @@
   }
 }
 .movies-page {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  @include Responsive("480px") {
-    margin-left: 0px;
+  padding: 2em 0em;
+  .title{
+    padding-bottom: 1em;
+    font-size: 1.2rem;
+    a{
+      font-size: .8rem;
+      color: #eeb500;
+    }
   }
-  .movie {
-    position: relative;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    margin-left: 20px;
-    margin-block: 20px;
-    overflow: hidden;
+  .movies{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
     @include Responsive("480px") {
       margin-left: 0px;
     }
-    .movie-info {
-      position: relative;
-      width: 100%;
-      height: 30%;
-      h2 {
-        font-size: 1.3rem;
-        margin: 0;
-        @include Responsive("1400px") {
-          font-size: 1rem;
-        }
-        @include Responsive("480px") {
-          font-size: 1.3rem;
-        }
+    .movie {
+      border-radius: 10px;
+      @include Responsive("480px") {
+        height: 500px;
+        margin-left: 0;
       }
-      .movie-detail {
-        position: absolute;
-        bottom: 10%;
-        h3 {
-          font-size: 1rem;
-          margin: 0;
-          font-weight: 500;
-          @include Responsive("1400px") {
-            font-size: 0.7rem;
-          }
-          @include Responsive("480px") {
-            font-size: 1rem;
-          }
-        }
-        .detail-button{
-          text-decoration: none;
-          color: white;
-          background-color: #aaaaaa;
-          padding: 0em .5em;
-        }
+      overflow: hidden;
+      height: 170px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      flex: 0 0 calc(10% - 20px);
+      @include Responsive("1400px") {
+        flex: 0 0 calc(20% - 20px);
       }
-    }
-    flex: 0 0 calc(20% - 20px);
-    @include Responsive("1400px") {
-      flex: 0 0 calc(33% - 20px);
-    }
-    @include Responsive("480px") {
-      flex: 0 0 100%;
-    }
-    img {
-      width: 100%;
-      height: 70%;
-      max-height: auto;
+      @include Responsive("900px") {
+        flex: 0 0 calc(33.333% - 20px);
+      }
+      @include Responsive("480px") {
+        flex: 0 0 100%;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+      }
     }
   }
 }
