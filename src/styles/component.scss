@@ -1,0 +1,282 @@
+.movie-details {
+  width: 100%;
+  height: auto;
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--slider_overlay_background,radial-gradient(ellipse,hsla(0,0%,8%,.3) 5%,hsla(0,0%,8%,.35) 18%,hsla(0,0%,8%,.85) 70%));
+  } 
+
+
+  .left-dtls {
+    position: relative;
+    width: 70%;
+    height: 100vh;
+    z-index: 1;
+    padding: 2rem;
+    padding-left: 4rem;
+
+    .big-title {
+      font-size: 6rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      width: 550px;
+      line-height: 6.5rem;
+      opacity: 0;
+      @include appearAnimate(0.2s);
+    }
+
+    .is-theater {
+      font-size: 0.75rem;
+      margin: 3rem 0 1rem 0;
+      opacity: 0;
+      @include appearAnimate(0.25s);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      opacity: 0;
+      @include appearAnimate(0.3s);
+      &-month {
+        text-transform: uppercase;
+        font-size: 1.15rem;
+        font-weight: 500;
+      }
+      &-year {
+        font-weight: lighter;
+      }
+    }
+
+    .ticket {
+      position: absolute;
+      height: 135px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      bottom: 2rem;
+
+      &-infors {
+        font-size: 0.75rem;
+        opacity: 0;
+      @include appearAnimate(0.35s);
+      }
+      &-action {
+        width: 100%;
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 0.625rem;
+        padding: 1.55rem;
+        letter-spacing: 1px;
+        opacity: 0;
+      @include appearAnimate(0.35s);
+      }
+    }
+  } 
+
+  .right-dtls {
+    position: relative;
+    padding: 2rem;
+    padding-left: 0;
+    width: 320px;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .direc {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 9rem;
+      &--starring {
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        opacity: 0;
+        @include appearAnimate(0.25s);
+      }
+      &--visual-name {
+        opacity: 0;
+        @include appearAnimate(0.3s);
+      }
+      &--btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #ffffff;
+        opacity: 0;
+        @include appearAnimate(0.3s);
+      }
+    }
+
+    .dtls-slider {
+      display: flex;
+      flex-direction: column;
+      margin-top: 4rem;
+
+      .controller {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ctrl-chevon {
+          transform: translateX(-7px);
+          display: flex;
+          box-icon {
+            fill: #ffffff;
+            cursor: pointer;
+          }
+        }
+        .ctrl-dots {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          > span {
+            width: 5px;
+            height: 5px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 0.2rem;
+            border: 1px solid #ffffff;
+          }
+        }
+      } 
+
+      .slider-wrapper {
+        width: 288px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        height: 215px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0;
+        @include appearAnimate(0.35s);
+          .wrapper {
+            width: auto;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: .3s ease-in-out;
+            .slider-card {
+              width: 135px;
+              height: 100%;
+              margin-right: 1rem;
+              > img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                // object-fit: cover;
+                aspect-ratio: 1/1;
+                background-size: 100%;
+              }
+            }
+        }
+      }
+    }
+  }
+}
+
+.app-header-v2 {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  cursor: pointer;
+  > span {
+    width: 45px;
+    height: 4px;
+    background-color: #ffffff;
+  }
+}
+
+@keyframes pulse-border {
+	0% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+		opacity: 0;
+	}
+}
+
+.video-play-button {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	box-sizing: content-box;
+	display: block;
+	width: 32px;
+	height: 44px;
+	border-radius: 50%;
+	padding: 18px 20px 18px 28px;
+  opacity: 0;
+  @include appearAnimate(0.25s);
+	&:before,	
+  &:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		display: block;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+    background: #fa183d;
+	}
+	&:before {
+    z-index: 0;
+		transition: all 200ms;
+    animation: pulse-border 1500ms ease-out infinite;
+    background: #ba1f24;
+	}
+	&:hover {
+		&:after {
+			background-color: darken(#fa183d, 10%);
+		}
+	}
+	span {
+		display: block;
+		position: relative;
+		z-index: 3;
+		width: 0;
+		height: 0;
+		border-left: 32px solid #fff;
+		border-top: 22px solid transparent;
+		border-bottom: 22px solid transparent;
+	}
+}
