@@ -5,9 +5,7 @@
 }
 .App{
   width: 100%;
-  margin: 0 auto;
   .nav {
-    border-bottom: 1px solid black;
     button {
       @include Responsive("480px") {
         display: none;
@@ -33,7 +31,6 @@
     background-color: #131720;
     color: white;
     .logo {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -43,6 +40,7 @@
       }
     }
     &__menu {
+      z-index: 2;
       font-size: 1rem;
       &__icon {
         padding-left: 1em;
@@ -87,5 +85,6 @@
       }
     }
     background-color: #151f30;
+    margin-top: 0;
   }
 }
