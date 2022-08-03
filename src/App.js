@@ -1,10 +1,11 @@
-import "./App.scss"
-import { MoviesPage } from "./components/movies"
-import { Switch, Route, Link } from "react-router-dom"
-import { Footer } from "./components/footer"
-import { useRef } from "react"
-import DetailsPage from "./components/movie-detail/DetailsPage"
-import NMovieDetail from "./components/movie-detail/N_movie_detail/NMovieDetail"
+import "./App.scss";
+import { MoviesPage } from "./components/movies";
+import { Switch, Route, Link } from "react-router-dom";
+import { Footer } from "./components/footer";
+import { useRef } from "react";
+import DetailsPage from "./components/movie-detail/DetailsPage";
+import NMovieDetail from "./components/movie-detail/N_movie_detail/NMovieDetail";
+import NewDetail from "./components/new-detail/NewDetail";
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           <MoviesPage />
         </Route>
         <Route path="/boring/:id">
-          <NMovieDetail />
+          <NewDetail />
         </Route>
         <Route path="/moreboring/:id">
           <DetailsPage />
@@ -42,7 +43,7 @@ function App() {
       </Switch>
       {/* <Footer /> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
