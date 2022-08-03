@@ -3,88 +3,60 @@
     @content;
   }
 }
-.App{
+.App {
   width: 100%;
+
   .nav {
-    button {
-      @include Responsive("480px") {
-        display: none;
-      }
-      height: 40px;
-      width: 150px;
-      border-radius: 20px;
-      color: white;
-      margin: 0 1em;
-    }
-    .sign-in-button {
-      border: solid 1px #eeb500;
-      background-color: #eeb50000;
-      height: 38px;
-    }
-    .premium-button {
-      background-color: #eeb500;
-      border: none;
-    }
     display: flex;
-    padding: 1em 0em;
+    flex: 1 1;
+    padding: 0.75rem 1rem;
     align-items: center;
     background-color: #131720;
     color: white;
+
     .logo {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      font-size: 1.5rem;
-      &__extra {
-        font-size: 0.8rem;
+      font-size: 1.2rem;
+      flex: 1 1;
+    }
+
+    .buttons {
+      display: flex;
+      list-style-type: none;
+      align-items: center;
+
+      > li {
+        margin-right: 0.5rem;
+        > a {
+          font-size: 0.75rem;
+          color: var(--white);
+          text-decoration: none;
+        }
+      }
+      button {
+        color: var(--white);
+        border: solid 1px #eeb500;
+        padding: .3rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        font-size: 0.75rem;
+        transition: .5s ease-in-out;
+
+        &.sign-in-btn {
+          background-color: #eeb50000;
+
+        }
+        &.premium-btn {
+          background-color: #eeb500;
+          border-color: transparent;
+        }
+        &:hover {
+          border: solid 1px #000;
+          background-color: var(--white);
+          color: #000;
+        }
       }
     }
-    &__menu {
-      z-index: 2;
-      font-size: 1rem;
-      &__icon {
-        padding-left: 1em;
-        margin-right: 1em;
-        color: white;
-        font-size: 1.5rem;
-      }
-      &__list {
-        .buttons-inside{
-          button{
-            margin-block: 1em;
-            display: none;
-            @include Responsive("480px") {
-              display: block;
-            }
-          }
-        }
-        position: fixed;
-        margin: 0;
-        bottom: 0;
-        width: 200px;
-        top: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 1em 0.5em;
-        list-style: none;
-        z-index: 1;
-        align-items: center;
-        margin-left: -100%;
-        &__close-icon {
-          align-self: flex-end;
-        }
-        li {
-          margin-block: 0.5em;
-          a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.2rem;
-          }
-        }
-        background-color: #151f30;
-      }
-    }
-    background-color: #151f30;
-    margin-top: 0;
   }
 }
