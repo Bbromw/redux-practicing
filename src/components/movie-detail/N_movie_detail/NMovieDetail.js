@@ -17,7 +17,7 @@ const NMovieDetail = () => {
 
   const moviesElement = useRef(null);
 
-  const senseElement = useRef(null)
+  const senseElement = useRef(null);
 
   const nextFilm = () => {
     const movies = moviesElement.current;
@@ -27,9 +27,7 @@ const NMovieDetail = () => {
   const nextSense = () => {
     const senses = senseElement.current;
     senses.append(senses.children[0]);
-  }
-
-
+  };
 
   useEffect(() => {
     dispatch(movieDetailAction.getMovieDetailThunk(id));
@@ -59,28 +57,20 @@ const NMovieDetail = () => {
               <p>{movie.Plot}</p>
             </div>
             <div className="info-container">
-              <div className="specific-info">
-                Actor<span> &#43;</span>
-              </div>
+              <div className="specific-info">Actor</div>
               <div className="info-detail">{movie.Actors}</div>
             </div>
 
             <div className="info-container">
-              <div className="specific-info">
-                Awards<span> &#43;</span>
-              </div>
+              <div className="specific-info">Awards</div>
               <div className="info-detail">{movie.Awards}</div>
             </div>
             <div className="info-container">
-              <div className="specific-info">
-                Country<span> &#43;</span>
-              </div>
+              <div className="specific-info">Country</div>
               <div className="info-detail">{movie.Country}</div>
             </div>
             <div className="info-container">
-              <div className="specific-info">
-                Writer<span> &#43;</span>
-              </div>
+              <div className="specific-info">Writer</div>
               <div className="info-detail">{movie.Writer}</div>
             </div>
           </div>
@@ -97,7 +87,7 @@ const NMovieDetail = () => {
             <i className="icon fa fa-plus-circle" aria-hidden="true"></i>
           </div>
         </div>
-        <div className="other-movies" >
+        <div className="other-movies">
           <div className="heading">Senses in film</div>
           <div className="movies" ref={senseElement}>
             <div className="movie" key={movie.imdbID}>
