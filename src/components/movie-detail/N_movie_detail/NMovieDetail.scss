@@ -41,8 +41,8 @@
       display: flex;
 
       .moviePicture {
-        width: 400px;
-        height: 500px;
+        width: 480px;
+        height: 680px;
         .picture {
           width: 100%;
           height: 100%;
@@ -60,10 +60,10 @@
         &-container {
           margin-top: 0;
           margin-bottom: 15px;
-          &:hover > .info-detail {
-            display: block;
-            animation: moveDown 0.15s ease-in-out;
-          }
+          // &:hover > .info-detail {
+          //   display: block;
+          //   animation: moveDown 0.15s ease-in-out;
+          // }
           .specific-info {
             display: inline-block;
            
@@ -72,7 +72,8 @@
           .info-detail {
        
             width: 100%;
-            display: none;
+            display: block;
+            color:#eeb500
           }
         }
       }
