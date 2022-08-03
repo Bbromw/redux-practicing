@@ -36,91 +36,93 @@ const NMovieDetail = () => {
     };
   }, []);
   return (
-    <div className="detail-section">
-      <div className="overlay"></div>
-      <div className="left-side">
-        <div className="heading">
-          <h1 className="title">TRANSFORMERS: THE LAST KNIGHT</h1>
-          <div className="extra-heading">
-            <div className="item rating">{movie.imdbRating} &#183;</div>
-            <div className="item runtime">{movie.Runtime} &#183;</div>
-            <div className="item langluage">{movie.Language} &#183;</div>
-            <div className="item released">{movie.Released} &#183;</div>
-          </div>
-        </div>
-        <div className="movie-info">
-          <div className="moviePicture">
-            <img className="picture" src={moviePicture} />
-          </div>
-          <div className="info">
-            <div className="plot">
-              <p>{movie.Plot}</p>
+    <div className="container">
+      <div className="detail-section">
+        <div className="overlay"></div>
+        <div className="left-side">
+          <div className="heading">
+            <h1 className="title">TRANSFORMERS: THE LAST KNIGHT</h1>
+            <div className="extra-heading">
+              <div className="item rating">{movie.imdbRating} &#183;</div>
+              <div className="item runtime">{movie.Runtime} &#183;</div>
+              <div className="item langluage">{movie.Language} &#183;</div>
+              <div className="item released">{movie.Released} &#183;</div>
             </div>
-            <div className="info-container">
-              <div className="specific-info">Actor</div>
-              <div className="info-detail">{movie.Actors}</div>
+          </div>
+          <div className="movie-info">
+            <div className="moviePicture">
+              <img className="picture" src={moviePicture} />
             </div>
+            <div className="info">
+              <div className="plot">
+                <p>{movie.Plot}</p>
+              </div>
+              <div className="info-container">
+                <div className="specific-info">Actor</div>
+                <div className="info-detail">{movie.Actors}</div>
+              </div>
 
-            <div className="info-container">
-              <div className="specific-info">Awards</div>
-              <div className="info-detail">{movie.Awards}</div>
-            </div>
-            <div className="info-container">
-              <div className="specific-info">Country</div>
-              <div className="info-detail">{movie.Country}</div>
-            </div>
-            <div className="info-container">
-              <div className="specific-info">Writer</div>
-              <div className="info-detail">{movie.Writer}</div>
+              <div className="info-container">
+                <div className="specific-info">Awards</div>
+                <div className="info-detail">{movie.Awards}</div>
+              </div>
+              <div className="info-container">
+                <div className="specific-info">Country</div>
+                <div className="info-detail">{movie.Country}</div>
+              </div>
+              <div className="info-container">
+                <div className="specific-info">Writer</div>
+                <div className="info-detail">{movie.Writer}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="right-side">
-        <div className="interact">
-          <div className="sections watch">
-            <div className="sub">Watch</div>
-            <i className="icon fa fa-play-circle" aria-hidden="true"></i>
-          </div>
-          <div className="sections add">
-            <div className="sub">Add play list</div>
-            <i className="icon fa fa-plus-circle" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div className="other-movies">
-          <div className="heading">Senses in film</div>
-          <div className="movies" ref={senseElement}>
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense2} />
+        <div className="right-side">
+          <div className="interact">
+            <div className="sections watch">
+              <div className="sub">Watch</div>
+              <i className="icon fa fa-play-circle" aria-hidden="true"></i>
             </div>
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense3} />
+            <div className="sections add">
+              <div className="sub">Add play list</div>
+              <i className="icon fa fa-plus-circle" aria-hidden="true"></i>
             </div>
           </div>
-          <button className="next-button" onClick={nextSense}>
-            Next &#62;
-          </button>
-        </div>
-        <div className="other-movies">
-          <div className="heading">Related Movies</div>
-          <div className="movies" ref={moviesElement}>
-            {/* {pathImg.map((path, index) => {console.log(path)})} */}
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense1} />
+          <div className="other-movies">
+            <div className="heading">Senses in film</div>
+            <div className="movies" ref={senseElement}>
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense2} />
+              </div>
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense3} />
+              </div>
             </div>
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense2} />
-            </div>
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense3} />
-            </div>
-            <div className="movie" key={movie.imdbID}>
-              <img src={sense4} />
-            </div>
+            <button className="next-button" onClick={nextSense}>
+              Next &#62;
+            </button>
           </div>
-          <button className="next-button" onClick={nextFilm}>
-            Next &#62;
-          </button>
+          <div className="other-movies">
+            <div className="heading">Related Movies</div>
+            <div className="movies" ref={moviesElement}>
+              {/* {pathImg.map((path, index) => {console.log(path)})} */}
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense1} />
+              </div>
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense2} />
+              </div>
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense3} />
+              </div>
+              <div className="movie" key={movie.imdbID}>
+                <img src={sense4} />
+              </div>
+            </div>
+            <button className="next-button" onClick={nextFilm}>
+              Next &#62;
+            </button>
+          </div>
         </div>
       </div>
     </div>
